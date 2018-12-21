@@ -1,0 +1,4 @@
+table {
+    /*强制单元格不换行*/
+    white-space: nowrap;
+}

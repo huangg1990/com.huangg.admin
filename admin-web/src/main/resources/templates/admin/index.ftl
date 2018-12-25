@@ -184,8 +184,8 @@
               </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="javascript:void(0)" class="menu-list" data-url="${base}/admin/user/index"  ><i class="fa fa-users"></i>用户列表</a></li>
-                        <li><a href="javascript:void(0)" class="menu-list" data-url="${base}/admin/news/index"  ><i class="fa fa-newspaper-o"></i>新闻列表</a></li>
+                        <li><a href="#" class="menu-list" data-url="${base}/admin/user/index"  ><i class="fa fa-users"></i>用户列表</a></li>
+                        <li><a href="#" class="menu-list" data-url="${base}/admin/news/index"  ><i class="fa fa-newspaper-o"></i>新闻列表</a></li>
                     </ul>
                 </li>
 
@@ -417,7 +417,7 @@
 <!-- AdminLTE App -->
 <script src="${base}/dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="${base}/dist/js/demo.js"></script>
+<#--<script src="${base}/dist/js/demo.js"></script>-->
 
 <script>
    $(function () {

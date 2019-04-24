@@ -18,7 +18,7 @@ var vue = new Vue({
                 type: 2,
                 area: ['768px'],
                 offset: '50px',
-                content: '/adminlte/page/sysmsg/addup_sysmsg',
+                content: '/admin/sysmsg/add',
                 success: function (layero, index) {
                     layer.iframeAuto(index);
                 }
@@ -35,11 +35,9 @@ var vue = new Vue({
                     "searching": false, // 搜索框 , 右上角
                     "lengthMenu": [[10, 20, 50, 100], [10, 20, 50, 100]], //pagesize , showpagesize
                     "pageLength": 10, //默认选中上面的一个pagesize
-                    // "bLengthChange": false,// 每页显示多少条记录下拉列表, 左上角.
-                    // "scrollY": 200,  // 垂直滚动
                     "scrollX": true, //水平滚动
                     "ajax": {
-                        "url": "/sysmsg/listdata?v=" + new Date().getTime(),
+                        "url": "/admin/sysmsg/listdata?v=" + new Date().getTime(),
                         "type": "POST",
                         "data": function (d) {
                             d.test = 1; //未上线的

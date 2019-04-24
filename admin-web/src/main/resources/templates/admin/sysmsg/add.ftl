@@ -38,8 +38,8 @@
 </section>
 
 <#include "../../layout/dialog_footer.ftl">
-<script src="/plugins/laydate/laydate.js"></script>
-<script src="/admin/sysmsg/add.js"></script>
+<script src="/assets/adminlte/plugins/laydate/laydate.js"></script>
+<script src="/assets/admin/sysmsg/add.js"></script>
 
 </body>
 </html>

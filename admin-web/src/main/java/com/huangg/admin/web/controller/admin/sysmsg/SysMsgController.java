@@ -5,6 +5,7 @@ import com.huangg.admin.web.entity.SysMsg;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.*;
 
@@ -16,7 +17,9 @@ public class SysMsgController extends BaseController {
     public String list(){
         return BASE_URL+"list";
     }
+
     @RequestMapping(value = BASE_URL+"listdata")
+    @ResponseBody
     public Object listdata(){
         int page=0;
         int size=10;

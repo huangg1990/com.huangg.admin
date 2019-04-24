@@ -7,22 +7,22 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="${base}/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${base}/assets/adminlte/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="${base}/libs/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${base}/assets/adminlte/libs/font-awesome-4.7.0/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="${base}/libs/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="${base}/assets/adminlte/libs/ionicons/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="${base}/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="${base}/assets/adminlte/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="${base}/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="${base}/assets/adminlte/dist/css/skins/_all-skins.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="${base}/libs/html5shiv/js/html5shiv.min.js"></script>
-    <script src="${base}/libs/respond/js/respond.min.js"></script>
+    <script src="${base}/assets/adminlte/libs/html5shiv/js/html5shiv.min.js"></script>
+    <script src="${base}/assets/adminlte/libs/respond/js/respond.min.js"></script>
     <![endif]-->
 </head>
 <!-- ADD THE CLASS fixed TO GET A FIXED HEADER AND SIDEBAR LAYOUT -->
@@ -54,13 +54,13 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="${base}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <img src="${base}/assets/adminlte/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                             <span class="hidden-xs">Alexander Pierce</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="${base}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="${base}/assets/adminlte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                 <p>
                                     Alexander Pierce - Web Developer
@@ -92,7 +92,7 @@
                                 </div>
                             </li>
                         </ul>
-                    </li> 
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -107,7 +107,7 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="${base}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="${base}/assets/adminlte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p>Alexander Pierce</p>
@@ -189,17 +189,23 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-<script src="${base}/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="${base}/assets/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="${base}/bootstrap/js/bootstrap.min.js"></script>
+<script src="${base}/assets/adminlte/bootstrap/js/bootstrap.min.js"></script>
 <!-- SlimScroll -->
-<script src="${base}/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="${base}/assets/adminlte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script src="${base}/plugins/fastclick/fastclick.js"></script>
+<script src="${base}/assets/adminlte/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="${base}/dist/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<#--<script src="${base}/dist/js/demo.js"></script>-->
+<script src="${base}/assets/adminlte/dist/js/app.min.js"></script>
+<script src="${base}/assets/adminlte/vue2/vue.js"></script>
+
+<!-- DataTables -->
+<script src="${base}/assets/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="${base}/assets/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="${base}/assets/adminlte/plugins/datatables/datetime.js"></script>
+
+<script src="${base}/assets/adminlte/libs/layer3/layer.js"></script>
 
 <script>
     $(function () {
@@ -210,6 +216,23 @@
             });
         });
     });
+    // var time1 = new Date().Format("yyyy-MM-dd");
+    // var time2 = new Date().Format("yyyy-MM-dd HH:mm:ss");
+    Date.prototype.Format = function (fmt) {
+        var o = {
+            "M+": this.getMonth() + 1, //月份
+            "d+": this.getDate(), //日
+            "h+": this.getHours(), //小时
+            "m+": this.getMinutes(), //分
+            "s+": this.getSeconds(), //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds() //毫秒
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    }
 </script>
 
 </body>
